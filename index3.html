@@ -182,6 +182,103 @@
               Analisis del top.....
             </p>
 
+
+            <h3>Que hacemos con el dispositivo movil ? Solo jugamos??</h3>
+
+            <div class="d-flex justify-content-center"  >
+                       <div class="form-group">
+                      <label for="sel1">Seleccione el país:</label>
+                      <select class="form-control" id="sel4">
+                        <option>US</option>
+                        <option>Espa&ntilde;a</option>
+                        <option>Brasil</option>
+                        <option>Canada</option>
+                        <option>Nueva Zelanda</option>
+                        <option>India</option>
+                        <option>Italia</option>
+                        <option>Francia</option>
+                        <option>Alemania</option>
+                        <option>Sudáfrica</option>
+                        <option>Argentina</option>
+                        <option>Venezuela</option>
+                        <option>Egipto</option>
+                        <option>México</option>
+                        <option>Australia</option>
+                        <option>Reino Unido</option>
+                      </select>
+                    </div> 
+            </div>
+
+<div class="row" style="margin: auto; height:350px"> 
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="d-flex justify-content-center" id="container4" ></div>
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="d-flex justify-content-center" id="container5" ></div> 
+  
+</div>
+            <script>
+                      dic  = {
+                        "US" : [3,0,1,6,0,24,6,60],
+                        "Australia" : [3,3,3,3,3,3,3,60]
+                      };
+
+
+                      var country = "US";
+
+                      
+
+                      var data = [
+                      {x: "music", value: dic[country][0]},
+                      {x: "books", value: dic[country][1]},
+                      {x: "medical", value: dic[country][2]},
+                      {x: "photo-video", value: dic[country][3]},
+                      {x: "health-fitness", value: dic[country][4]},
+                      {x: "games", value: dic[country][5]},
+                      {x: "social-networking", value: dic[country][6]},
+                      {x: "others", value: dic[country][7]}
+                    ];
+
+                  
+
+                    // create a chart and set the data
+                    chart = anychart.pie(data);
+
+                    // set the container id
+                    chart.container("container4");
+                    chart.title("Free")
+                    // initiate drawing the chart
+                    chart.draw();
+            </script> 
+
+           
+
+            <script>
+                      var data = [
+                      {x: "music", value: 3},
+                      {x: "books", value: 0},
+                      {x: "medical", value: 1},
+                      {x: "photo-video", value: 6},
+                      {x: "health-fitness", value: 0},
+                      {x: "games", value: 24},
+                      {x: "social-networking", value: 6},
+                      {x: "others", value: 60}
+                    ];
+
+                  
+
+                    // create a chart and set the data
+                    chart = anychart.pie(data);
+
+                    // set the container id
+                    chart.container("container5");
+                    chart.title("Paid")
+                    // initiate drawing the chart
+                    chart.draw();
+            </script> 
+
+            <br>
             <h3>Tan iguales o tal vez tan diferentes!!!</h3>
             <p>De una manera lógica podemos determinar que si dos personas tienen los mismos intereses consuman el mismo contenido, entonces sería interesante observar que tan similares son los países del estudio en cuanto a las aplicaciones que descargan.</p>
 
@@ -189,32 +286,33 @@
             <div class="card-deck">  
               <div class="card mb-4">
                 <div class="card-body">
-                  <ul class="list-group list-group-horizontal-xm" >
-                    <li class="list-group-item">
+                  
+                  <div class="row" style="margin: auto; height: 100%"> 
                       <div class="form-group">
-                        <label for="sel1">Seleccione el pais:</label>
-                        <select class="form-control" id="sel2">
-                          <option>US</option>
-                          <option>España</option>
-                          <option>Brasil</option>
-                          <option>Canada</option>
-                          <option>Nueva Zelanda</option>
-                          <option>India</option>
-                          <option>Italia</option>
-                          <option>Francia</option>
-                          <option>Alemania</option>
-                          <option>Sudáfrica</option>
-                          <option>Argentina</option>
-                          <option>Venezuela</option>
-                          <option>Egipto</option>
-                          <option>México</option>
-                          <option>Australia</option>
-                          <option>Reino Unido</option>
-                        </select>
-                      </div> 
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
+                          <label for="sel1">Seleccione el pais:</label>
+                          <select class="form-control" id="sel2">
+                            <option>US</option>
+                            <option>España</option>
+                            <option>Brasil</option>
+                            <option>Canada</option>
+                            <option>Nueva Zelanda</option>
+                            <option>India</option>
+                            <option>Italia</option>
+                            <option>Francia</option>
+                            <option>Alemania</option>
+                            <option>Sudáfrica</option>
+                            <option>Argentina</option>
+                            <option>Venezuela</option>
+                            <option>Egipto</option>
+                            <option>México</option>
+                            <option>Australia</option>
+                            <option>Reino Unido</option>
+                            </select>
+                         </div> 
+
+                       &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                      
+                      <div class="form-group">
                           <label for="sel2">Seleccione el pais:</label>
                           <select class="form-control" id="sel3">
                             <option>US</option>
@@ -235,14 +333,13 @@
                             <option>Reino Unido</option>
                           </select>
                         </div> 
-                    </li>
-
-                  </ul>
+                  </div>
+                  
 
                   <ul class="list-group list-group-horizontal" >
                       <li class="list-group-item">
                     
-                      <label id="match" >Seleccione los paises</label>
+                      <label id="match" >Los paises no han sido seleccionados</label>
                       
                       </li>
                       <li class="list-group-item">

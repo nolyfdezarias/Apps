@@ -18,100 +18,81 @@ var dic1  = {
     "Venezuela" : [4,0,0,15,3,21,8,49]
   };
   
-  var dic2 = {
-    "US" : [2,0,1,8,4,48,0,37],
-    "Australia" : [1,0,4,8,12,40,1,34],
-    "Canada" : [1,0,2,10,6,49,1,31],
-    "Francia" : [3,1,2,7,2,57,4,24],
-    "Alemania" : [1,0,1,9,7,36,3,43],
-    "Reino Unido" : [1,0,4,7,3,45,1,39],
-    "Italia" : [0,0,1,15,5,42,4,33],
-    "Argentina" : [0,0,1,22,3,31,5,38],
-    "Brasil" : [0,0,4,17,3,37,6,33],
-    "India" : [4,0,0,20,7,33,5,31],
-    "México" : [0,0,1,8,3,60,3,25],
-    "Nueva Zelanda" : [1,0,4,10,8,46,0,31],
-    "Egipto" : [0,0,2,18,3,33,6,53],
-    "Sudáfrica" : [0,1,2,10,12,34,3,38],
-    "España" : [1,0,3,13,6,31,3,43],
-    "Venezuela" : [4,1,0,20,3,37,2,33]
-  };
-  
-  
-  
-  
-  country = dic1['US'];
-  country1 = dic2['US'];
+var dic2 = {
+  "US" : [2,0,1,8,4,48,0,37],
+  "Australia" : [1,0,4,8,12,40,1,34],
+  "Canada" : [1,0,2,10,6,49,1,31],
+  "Francia" : [3,1,2,7,2,57,4,24],
+  "Alemania" : [1,0,1,9,7,36,3,43],
+  "Reino Unido" : [1,0,4,7,3,45,1,39],
+  "Italia" : [0,0,1,15,5,42,4,33],
+  "Argentina" : [0,0,1,22,3,31,5,38],
+  "Brasil" : [0,0,4,17,3,37,6,33],
+  "India" : [4,0,0,20,7,33,5,31],
+  "México" : [0,0,1,8,3,60,3,25],
+  "Nueva Zelanda" : [1,0,4,10,8,46,0,31],
+  "Egipto" : [0,0,2,18,3,33,6,53],
+  "Sudáfrica" : [0,1,2,10,12,34,3,38],
+  "España" : [1,0,3,13,6,31,3,43],
+  "Venezuela" : [4,1,0,20,3,37,2,33]
+};
+
+function get_data(country_name) {
+  country = dic1[country_name];
+  country1 = dic2[country_name];
   
   var data0 = [
-    {x: "music", value: country[0]},
-    {x: "books", value: country[1]},
-    {x: "medical", value: country[2]},
-    {x: "photo-video", value: country[3]},
-    {x: "health-fitness", value: country[4]},
-    {x: "games", value: country[5]},
-    {x: "social-networking", value: country[6]},
-    {x: "others", value: [country[7]]}
+    {x: "música", value: country[0]},
+    {x: "libros", value: country[1]},
+    {x: "médicas", value: country[2]},
+    {x: "foto-video", value: country[3]},
+    {x: "salud-ejercicios", value: country[4]},
+    {x: "juegos", value: country[5]},
+    {x: "redes sociales", value: country[6]},
+    {x: "otros", value: country[7]}
   ];
   var data1 = [
-    {x: "music", value: country1[0]},
-    {x: "books", value: country1[1]},
-    {x: "medical", value: country1[2]},
-    {x: "photo-video", value: country1[3]},
-    {x: "health-fitness", value: country1[4]},
-    {x: "games", value: country1[5]},
-    {x: "social-networking", value: country1[6]},
-    {x: "others", value: [country1[7]]}
+    {x: "música", value: country1[0]},
+    {x: "libros", value: country1[1]},
+    {x: "médicas", value: country1[2]},
+    {x: "foto-video", value: country1[3]},
+    {x: "salud-ejercicios", value: country1[4]},
+    {x: "juegos", value: country1[5]},
+    {x: "redes sociales", value: country1[6]},
+    {x: "otros", value: country1[7]}
   ];
-    var chart1 = anychart.pie(data0);
+  return {'free': data0, 'paid': data1};
+}
 
-    // set the container id
-    chart1.container("container4");
-    chart1.title("Free");
-    // initiate drawing the chart
+var data = get_data('US');
+var chart1 = anychart.pie(data.free);
+
+// set the container id
+chart1.container("container4");
+chart1.title("Gratis");
+// initiate drawing the chart
+chart1.draw();
+
+// Chart for paid
+chart2 = anychart.pie(data.paid);
+
+// set the container id
+chart2.container("container5");
+chart2.title("Pagadas")
+// initiate drawing the chart
+chart2.draw();
+
+$(document).ready(function () {
+  $("#sel4").change(function() {
+    var input1 = document.getElementById("sel4").value;
+    var data = get_data(input1);
+    
+    chart1.data(data.free)
     chart1.draw();
-
-    // Chart for paid
-    chart2 = anychart.pie(data1);
-
-    // set the container id
-    chart2.container("container5");
-    chart2.title("Paid")
-    // initiate drawing the chart
+    
+    // Poner data2 para los paid
+    //var data2 = data1;
+    chart2.data(data.paid)
     chart2.draw();
-
-    $(document).ready(function (){
-      $("#sel4").change(function() {
-        var input1 = document.getElementById("sel4").value;
-        var country = dic1[input1];
-        var country1 = dic2[input1];
-        var data0 = [
-          {x: "music", value: country[0]},
-          {x: "books", value: country[1]},
-          {x: "medical", value: country[2]},
-          {x: "photo-video", value: country[3]},
-          {x: "health-fitness", value: country[4]},
-          {x: "games", value: country[5]},
-          {x: "social-networking", value: country[6]},
-          {x: "others", value: [country[7]]}
-        ];
-        var data1 = [
-          {x: "music", value: country1[0]},
-          {x: "books", value: country1[1]},
-          {x: "medical", value: country1[2]},
-          {x: "photo-video", value: country1[3]},
-          {x: "health-fitness", value: country1[4]},
-          {x: "games", value: country1[5]},
-          {x: "social-networking", value: country1[6]},
-          {x: "others", value: [country1[7]]}
-        ];
-        chart1.data(data0)
-        chart1.draw();
-        
-        // Poner data2 para los paid
-        //var data2 = data1;
-        chart2.data(data1)
-        chart2.draw();
-        
-        });
-    }); 
+    });
+}); 

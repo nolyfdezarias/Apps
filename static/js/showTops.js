@@ -1,10 +1,7 @@
  
 
 $(document).ready(function (){
-
-
     var src1 = 'static/img/AR.png';
-
     var src2 = 'static/img/US.png';
     var src3 = 'static/img/ES.png';
     var src4 = 'static/img/FR.png';
@@ -38,17 +35,12 @@ $(document).ready(function (){
     "Venezuela" : src9 ,
     "Brasil" : src14 ,
     "Argentina" : src1 
-
     };
     
     $("#sel1").change(function() {
-    var input1 = document.getElementById("sel1").value;
-    input1 = dic1[input1]
+        var input1 = document.getElementById("sel1").value;
+        input1 = dic1[input1]
         $("#imagen").attr("src",input1)
-
     });
-
-    
-
-    });
+});
                

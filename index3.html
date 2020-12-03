@@ -158,68 +158,8 @@
   <div class="d-flex justify-content-center" id="container5" ></div> 
   
 </div>
-    <script>
-          // Data for paid
-          var dic1  = {
-            "US" : [3,0,1,6,0,24,6,60],
-            "Australia" : [3,3,3,3,3,3,3,60]
-          };
-          country = dic1['US'];
 
-          var data1 = [
-            {x: "music", value: country[0]},
-            {x: "books", value: country[1]},
-            {x: "medical", value: country[2]},
-            {x: "photo-video", value: country[3]},
-            {x: "health-fitness", value: country[4]},
-            {x: "games", value: country[5]},
-            {x: "social-networking", value: country[6]},
-            {x: "others", value: [country[7]]}
-          ];
-            var chart1 = anychart.pie([3,0,1,6,0,24,6,60]);
-
-            // set the container id
-            chart1.container("container4");
-            chart1.title("Free");
-            // initiate drawing the chart
-            chart1.draw();
-
-            // Chart for paid
-            chart2 = anychart.pie(data1);
-
-            // set the container id
-            chart2.container("container5");
-            chart2.title("Paid")
-            // initiate drawing the chart
-            chart2.draw();
-
-            $(document).ready(function (){
-              $("#sel4").change(function() {
-                var input1 = document.getElementById("sel4").value;
-                var country = dic1[input1];
-                
-                var data1 = [
-                  {x: "music", value: country[0]},
-                  {x: "books", value: country[1]},
-                  {x: "medical", value: country[2]},
-                  {x: "photo-video", value: country[3]},
-                  {x: "health-fitness", value: country[4]},
-                  {x: "games", value: country[5]},
-                  {x: "social-networking", value: country[6]},
-                  {x: "others", value: [country[7]]}
-                ];
-                chart1.data(data1)
-                chart1.draw();
-                
-                // Poner data2 para los paid
-                var data2 = data1;
-                chart2.data(data2)
-                chart2.draw();
-                
-                });
-            });
-
-    </script>  
+     
             <br>
             <h3>Tan iguales o tal vez tan diferentes!!!</h3>
             <p>De una manera lógica podemos determinar que si dos personas tienen los mismos intereses consuman el mismo contenido, entonces sería interesante observar que tan similares son los países del estudio en cuanto a las aplicaciones que descargan.</p>
@@ -323,6 +263,7 @@
     <script src="static/js/showTops.js"></script> 
     <script src="static/js/match.js"></script> 
     <script src="static/js/anychart-base.min.js" type="text/javascript"></script> 
+    <script src="static/js/countriesPies.js"></script> 
     <script src="static/js/amongUs.js"></script>
     <script src="static/js/zoom.js"></script>
     <script src="static/js/tiktok.js"></script>

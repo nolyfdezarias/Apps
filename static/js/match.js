@@ -24,11 +24,11 @@ $(document).ready(function (){
     $("#Bmatch").click(function() {
         var input1 = document.getElementById("sel2").value;
         var input2 = document.getElementById("sel3").value;
-        input1 = dic1[input1]
-        input2 = dic1[input2]
-        var mykey = input1 + "_" + input2
+        var input11 = dic1[input1]
+        var input22 = dic1[input2]
+        var mykey = input11 + "_" + input22
         mykey = dic[mykey]
-        document.getElementById("match").innerHTML = "La similitud de los países es de un "  + mykey + " porciento";
+        document.getElementById("match").innerHTML = "La similitud de los países : " + input1 + " y " + input2  + " es de un "  + mykey + " porciento";
     });
 
 }); 

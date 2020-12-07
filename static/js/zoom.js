@@ -72,7 +72,7 @@ anychart.onDocumentLoad(function () {
     series16.name("Venezuela")
     
      // set chart title
-    chart.title("ZOOM");
+    chart.title("Top de descargas de ZOOM");
     // set the container element 
     chart.container("container2");
 

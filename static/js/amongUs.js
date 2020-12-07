@@ -72,7 +72,7 @@ anychart.onDocumentLoad(function () {
     series16.name("Venezuela")
     
     // set chart title
-    chart.title("Among Us");
+    chart.title("Top de descargas de Among Us");
     // set the container element 
     chart.container("container1");
 

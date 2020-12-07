@@ -72,7 +72,7 @@ anychart.onDocumentLoad(function () {
     series16.name("Venezuela")
     
      // set chart title
-    chart.title("TIKTOK");
+    chart.title("Top de descargas de TIKTOK");
     // set the container element 
     chart.container("container3");
 

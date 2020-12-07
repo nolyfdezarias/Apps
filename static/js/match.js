@@ -28,7 +28,7 @@ $(document).ready(function (){
         var input22 = dic1[input2]
         var mykey = input11 + "_" + input22
         mykey = dic[mykey]
-        document.getElementById("match").innerHTML = "La similitud de los países : " + input1 + " y " + input2  + " es de un "  + mykey + " porciento";
+        document.getElementById("match").innerHTML = "La similitud de los países: " + input1 + " y " + input2  + " es de un "  + mykey + " porciento";
     });
 
 }); 
